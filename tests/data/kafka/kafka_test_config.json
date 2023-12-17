@@ -1,8 +1,15 @@
 {
-  "name": "Kafka connector",
+  "name": "Kafka Connector",
   "kafka": {
     "name": "kafka_broker",
-    "bootstrapServers": "192.168.1.131:9092"
+    "bootstrapServers": "192.168.1.131:9092",
+    "groupId": "kafka-tb-consumer-group"
   },
-  "test": "test"
+  "devices": [
+    {
+      "name": "test-device",
+      "profile": "default",
+      "topic": "tb-test-topic"
+    }
+  ]
 }

@@ -14,6 +14,7 @@ from thingsboard_gateway.connectors.kafka.kafka_connector import KafkaConnector
 
 from kafka import KafkaProducer
 
+
 class KafkaConnectorTestsBase(unittest.TestCase):
     CONFIG_PATH = path.join(path.dirname(path.dirname(path.abspath(__file__))),
                             "data" + path.sep + "kafka" + path.sep)
@@ -34,6 +35,7 @@ class KafkaConnectorTestsBase(unittest.TestCase):
             self.connector.open()
             sleep(2)
 
+
 class KafkaConnectorConsumeTest(KafkaConnectorTestsBase):
     __kafka_producer = None
 
@@ -51,6 +53,7 @@ class KafkaConnectorConsumeTest(KafkaConnectorTestsBase):
         self.__kafka_producer.send('tb-test-topic', {"temperature": 25.0})
         while True:
             sleep(.5)
+
 
 if __name__ == '__main__':
     unittest.main()
